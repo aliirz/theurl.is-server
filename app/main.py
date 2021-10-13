@@ -2,17 +2,17 @@ import uvicorn
 from fastapi import FastAPI
 from classes.shortner import Shortener
 
+
+from database import models, database, crud, schemas
+
+models.Base.metadata.create_all(bind=database.engine)
+
 app = FastAPI()
 
 
 @app.get("/")
 def read_root():
-    return Shortener().generate_short_url()
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+    return Shortener().generate_the_url()
 
 
 if __name__ == "__main__":

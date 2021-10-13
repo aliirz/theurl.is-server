@@ -10,6 +10,6 @@ class Url(Base):
     __tablename__ = "urls"
 
     id = Column(Integer, primary_key=True, index=True)
-    ourl = Column(String, unique=True, index=True)
-    surl = Column(String)
+    ourl = Column(String)
+    surl = Column(String, unique=True, index=True)
     stamp = Column(Date, default=func.now())

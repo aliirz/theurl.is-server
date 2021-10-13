@@ -5,7 +5,6 @@ from pydantic import BaseModel
 
 
 class UrlBase(BaseModel):
-    title: str
     ourl: str
     surl: str
 

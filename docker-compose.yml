@@ -6,7 +6,3 @@ services:
       - "3001:3001"
     environment:
       - PORT=3001
-# networks:
-#   default:
-#     external:
-#       name: slots-calculations-microservice_default

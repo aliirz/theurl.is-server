@@ -22,7 +22,7 @@ def get_db():
         db.close()
 
 
-@app.post("/", response_model=schemas.Url)
+@app.post("/shortenurl", response_model=schemas.Url)
 def make_the_url(url: schemas.UrlCreate, db: Session = Depends(get_db)):
 
     url.surl = Shortener().generate_the_url()
